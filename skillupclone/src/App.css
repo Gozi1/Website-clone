@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Gothic+A1:wght@200&family=Varela&display=swap');
+*{
+  margin:0;
+  padding:0;
+  color:aliceblue;
+  font-size:10px;
+  font-family: 'Varela', sans-serif;
+
+}
+
+body{
+  background:rgb(211, 245, 117);
+}
+.Container{
+  margin: 3rem;
+  height: 100%;
+  width: calc(100% - 6rem);
+  background:rgb(1, 1, 27);
+  border-radius:30px
+}
+
+.navBar{
+  position: relative;
+  top: 0;
+  display:flex;
+  padding:3rem;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  color:aliceblue;
+  
+}
+.navBar-middle li{
+  list-style: none;
+  padding: 1rem;
+  display:inline;
+}
+.navBar-middle select{
+border:none;
+background:transparent;
+}
+.navBar-end li{
+  list-style: none;
+  padding: 1rem;
+  display:inline;
+}
+.navBar-end button{
+  background:rgb(1, 1, 27);
+  padding:1rem;
+  /* fixed this make the button more accurate */
+  border:1px solid white;
+  border-radius:5px;
+}
+.Grid-container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  height: max-content;
+}
+.Grid-container form{
+  grid-column:2/2;
+  grid-row:1;
+  margin-top:25rem;
+  border:none;
+  display:flex;
+  flex-direction:row; 
+  width:80%;
+  height: 5rem;
+  margin-left: 4rem;
+  opacity: 0;
+  animation: fadeInFromLeft 0.5s ease-in forwards;
+  animation-delay: 1.5s;
+}
+@keyframes fadeInFromLeft {
+  from{
+    opacity:0;
+    transform: translateX(-50px)
+  }
+  to {opacity:1;
+    transform: translateY(0px)}
+}
+.Grid-container input {
+  flex-grow:1;
+  border:none;
+  border-radius:30px;
+}
+.Grid-container ::placeholder{
+  position:absolute;
+  left:5%;
+  bottom:40%; 
+  color:rgb(202, 199, 199)
+}
+
+.Grid-container svg{
+  width:3.5em;
+  position:relative;
+  top:-40%;
+  left: -4em;
+ 
+}
+.Grid-container path{
+  opacity:0;
+  animation: appear 1s ease-in forwards;
+  animation-delay:2s;
+}
+@keyframes appear{
+  0% {
+     opacity:0;}
+  50%{
+    opacity: 0;
+    }  
+  100% {
+    opacity: 1;
+    }
+}
+
+.Img-main{
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  grid-column:1/2;
+  height: 50rem;
+  width: 35rem;
+  border-radius:5%;
+  overflow: visible;
+  background-color:white;
+  animation: dropIn 1s ease-in;
+}
+@keyframes dropIn{
+  0% {
+    opacity:0;
+    transform: translateY(50px) scale(105%);
+  }
+  25%{
+    opacity:1;
+  }
+  50%{
+    transform: translateY(0px) scale(105%);
+  }
+
+  75%{
+    transform: scale(105%);
+  }
+  100% {
+    
+    transform: scale(100%);
+  }
+}
+
+.Order-1{
+  display: inline-block;
+  position: relative;
+  z-index:1;
+  opacity: 0;
+  animation:dropDown 0.3s ease-in-out forwards;
+  /* animation-delay:0.4s; */
+}
+.Order-2{
+  display: inline-block;
+  position: relative;
+  z-index:1;
+  opacity: 0;
+  animation:dropDown 0.3s ease-in-out forwards;
+  animation-delay:0.2s;
+}
+.Order-3{
+  display: inline-block;
+  position: relative;
+  z-index:1;
+  opacity: 0;
+  animation:dropDown 0.3s ease-in-out forwards;
+  animation-delay:0.4s;
+}
+.Order-4{
+  display: inline-block;
+  position: relative;
+  z-index:1;
+  opacity: 0;
+  animation:dropDown 0.3s ease-in-out forwards;
+  animation-delay:0.6s;
+}
+.Order-4::after{
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  height: .9rem;
+  width: 0%;
+  background: red;
+  z-index:-1;
+  animation: lineIn 0.5s ease-in forwards;
+  animation-delay:1s;
+}
+
+@keyframes dropDown{
+  from{
+    opacity:0;
+    transform: translateY(-50px)
+  }
+  to {
+    opacity:1;
+    transform: translateY(0px)}
+}
+@keyframes lineIn{
+  from{width:0}
+  to{width:80%}
+}
+.Title span{
+  font-size: 5rem;
+}
+.Title{
+  font-size: 5rem;
+  margin-left: 4rem;
+  position: relative;
+  top: 0;
+  grid-column:2/2;
+  grid-row: 1;
+  height:min-content;
+}
+
+
+.Paragraph{
+  margin-left: 4rem;
+  grid-column:2/2;
+  grid-row: 1;
+  margin-top: 4rem;
+  position:relative;
+  top:20%;
+  font-size: 2rem;
+  overflow: hidden ;
+  overflow-wrap: break-word;
+  word-break:break-word;
+  text-overflow: ellipsis;
+}
+
+.faded-word{
+  display: inline-block;
+  transform:translateX(-15%);
+	opacity:0;
+  font-size: 1.2rem;
+}
+.faded-activated {
+	transition:opacity .05s, transform .05s ease-in;
+	opacity:1;
+	transform:translateX(0);
+}
+@keyframes lineappear{
+  from{
+    left:0}
+    to{
+      left:100%}
+    }
+  
+
+.Container-inner{
+  grid-column:1/2;
+  grid-row: 2/span 3;
+  display:grid;
+  grid-template-columns: repeat(2,40% 60%);
+  margin-left: 2rem;
+}
+.Container-inner h1{
+  font-size: 5rem;
+}
+.Container-inner h2,span{
+  font-size: 3rem;
+}
+.Sub-title span{
+  display: inline-block;
+  position: relative;
+}
+.Sub-title span::after{
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  height: .5rem;
+  width: 100%;
+  background: palevioletred;
+}
+.Stat{
+  margin-left: auto ;
+  margin-right: auto ;
+  opacity: 0;
+  animation:appearFromLeft 0.5s ease-in forwards;
+  animation-delay: 2s;
+}
+@keyframes appearFromLeft{
+  from{
+    transform:translateX(-20%);
+    opacity:0;
+  }
+  to{
+    transform:translateX(0%);
+    opacity:1;
+  }
+}
+
+.Sub-title{
+  opacity:0;
+  animation: slideInFromLeft 0.5s ease-in forwards;
+  animation-delay: 2s;
+}
+@keyframes slideInFromLeft{
+  from{
+    opacity:0;
+    transform:translateX(-20%);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0%);
+  }
+}
+
+
+.List-container {
+  grid-column:2/2;
+  grid-row: 1/span 2;
+  margin-top: 40rem;
+  overflow: visible;
+  list-style:none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.List-container li{
+  height:30rem;
+  width:15em;
+  background:wheat;
+  overflow:visible;
+  opacity:0;
+  border-radius: 5%;
+  /* animation: popIn 1s ease-in forwards; the forward here doesn't work for some reason so i did it in j query */ 
+  /* animation-delay: 0.9s; */
+}
+.List-container li:nth-child(1){
+  width:20em;
+  margin-right:2%
+}
+.List-container li:nth-child(2){
+  margin-right:2%
+}
+
+@keyframes popIn{
+  0%{
+    opacity:0;
+    transform: scale(115%) translateY(40%) ;
+  }
+  50%{
+    opacity:1;
+    transform :  scale(115%) translateY(0);
+  }
+  100%{
+    transform: scale(100%)
+  }
+
+
+}
