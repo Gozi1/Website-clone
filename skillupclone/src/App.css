@@ -13,8 +13,8 @@ body{
 }
 .Container{
   margin: 3rem;
-  height: 100%;
-  width: calc(100% - 6rem);
+  height: 90vh;
+  width: 96vw;
   background:rgb(1, 1, 27);
   border-radius:30px
 }
@@ -316,7 +316,8 @@ background:transparent;
 .List-container {
   grid-column:2/2;
   grid-row: 1/span 2;
-  margin-top: 40rem;
+  position: relative;
+  top: 30rem;
   overflow: visible;
   list-style:none;
   display: flex;
@@ -331,16 +332,14 @@ background:transparent;
   overflow:visible;
   opacity:0;
   border-radius: 5%;
-  /* animation: popIn 1s ease-in forwards; the forward here doesn't work for some reason so i did it in j query */ 
+  /* animation: popIn 1s ease-in forwards; the forward here Didnt work as intented so i did it in j query */ 
   /* animation-delay: 0.9s; */
 }
 .List-container li:nth-child(1){
   width:20em;
-  margin-right:2%
 }
-.List-container li:nth-child(2){
-  margin-right:2%
-}
+
+
 
 @keyframes popIn{
   0%{

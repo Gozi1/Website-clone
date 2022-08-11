@@ -13,7 +13,7 @@ function App() {
   for(let value of sidePics){
     console.log(value);
     setTimeout(()=>{
-      value[0].style.animation = "popIn 1s ease-out forwards"
+      value[0].style.animation = "popIn 1s ease-in  "
     }, value[1])
     setTimeout(()=>{
       value[0].style.opacity = "1"
